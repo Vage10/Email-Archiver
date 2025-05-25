@@ -112,13 +112,10 @@ Handles redirect from Google, saves tokens.
 
 ## Example Logs & Outputs
 
-1[AuthService] ✅ Token file found, attempting to load it
-
-2[EmailService] Email saved with ID: 42
-
-3[DriveService] ✅ Uploaded to Drive: 1ABCd...
-
-4[SchedulerService] Processed 3 messages.
+* [AuthService] ✅ Token file found, attempting to load it
+* [EmailService] Email saved with ID: 42
+* [DriveService] ✅ Uploaded to Drive: 1ABCd...
+* [SchedulerService] Processed 3 messages.
 
 ## Developed By
 Vageshwari Chaudhary
