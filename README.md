@@ -9,14 +9,10 @@ A backend service to archive every incoming email from a G-Suite inbox, storing 
 - [Features](#features)
 - [Architecture](#architecture)
 - [Setup & Installation](#setup--installation)
-- [Google Cloud & OAuth Configuration](#google-cloud--oauth-configuration)
-- [Environment Variables](#environment-variables)
 - [Running the Project](#running-the-project)
 - [How It Works](#how-it-works)
 - [Endpoints](#endpoints)
 - [Example Logs & Outputs](#example-logs--outputs)
-- [Security Notes](#security-notes)
-- [License](#license)
 
 ---
 
@@ -42,12 +38,12 @@ A backend service to archive every incoming email from a G-Suite inbox, storing 
 
 ### Project Structure
 src/
-├── auth/ # OAuth and credential management
-├── database/ # DB connection settings (TypeORM)
-├── drive/ # Drive upload logic
-├── email/ # Entities & logic for email/attachment
-├── gmail/ # Gmail API logic (fetching emails)
-├── scheduler/ # Periodic tasking
+* ├── auth/ # OAuth and credential management
+* ├── database/ # DB connection settings (TypeORM)
+* ├── drive/ # Drive upload logic
+* ├── email/ # Entities & logic for email/attachment
+* ├── gmail/ # Gmail API logic (fetching emails)
+* ├── scheduler/ # Periodic tasking
 
 
 ## Setup & Installation
@@ -57,7 +53,7 @@ PostgreSQL database
 
 ### 1. Clone the repository
 ```
-git clone <repo-url>
+git clone (https://github.com/Vage10/Email-Archiver.git)
 cd email-archiver
 ```
 2. Install dependencies
@@ -86,13 +82,13 @@ DATABASE_NAME=email_archiver
 ```
 CREATE DATABASE email_archiver;
 ```
-### Running the Project
+## Running the Project
 
 ```npm run start```
 
 The app runs at http://localhost:3000.
 
-### How It Works
+## How It Works
 * On first run, app will log a URL for Google OAuth (/auth/google endpoint).
 * Visit the URL, sign in to the G-Suite inbox you want to archive, and give consent.
 * App exchanges consent for tokens, stores them securely.
@@ -103,7 +99,7 @@ The app runs at http://localhost:3000.
 * Download and save attachments to Google Drive
 * You can monitor logs or DB for archived communications.
   
-### Endpoints
+## Endpoints
 ```bash
 GET /auth/google
 ```
@@ -111,10 +107,10 @@ Redirects user to Google for consent flow.
 
 ```bash
 GET /auth/google/callback?code=...
-Handles redirect from Google, saves tokens.
 ```
+Handles redirect from Google, saves tokens.
 
-Example Logs & Outputs
+## Example Logs & Outputs
 
 1[AuthService] ✅ Token file found, attempting to load it
 2[EmailService] Email saved with ID: 42
